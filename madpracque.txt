@@ -1,0 +1,702 @@
+MOBILE APP DEVELOPMENT
+
+PRACTICAL-1
+Types of variable-There are multiple variable like
+Integer, Double, String, Boolean etc.
+Code:
+void main() {
+  int num= 10;
+  double num1=12.3;
+  bool num3=true;
+  String str1="hello";
+  print(num);
+  print(num1);
+  print(num3);
+  print(str1);
+  
+}
+OUTPUT:
+ 
+Types of operator
+         Arithmetic operator-Arithmetic operator are used to 
+         Perform arithmetic operation such as +,-,*,/,%.      
+Code-         
+void main() {
+  int a= 10;
+  int b=12;
+  var c=a+ b;
+  print("Sum is $c");
+  var u=a-b;
+  print("Subtraction is $u");
+  var B=a*b;
+  print("Multiplication is $B");
+  var d=a/b;
+  print("Division is $d");
+  var e= a% b;
+  print("reminder is $e");
+ }
+Output:
+
+
+
+Relational operator-relational operator are used to compare two value.
+Code:
+void main() {
+  int a= 10;
+  int b=12;
+  var c=a>b;
+  print("$c");
+  var u=a<b;
+  print("$u");
+  var B=a==b;
+  print("$B");
+  var d=a!=b;
+  print("$d");
+  var e=a>=b;
+  print("$e");
+ }
+Output:
+
+
+
+
+
+
+
+
+Bitwise operator-bitwise operator are used to perform bitwise calculation on integer.
+Code:
+  void main() {
+  int a= 10857;
+  int b=12754;
+  var c=a&b;
+  print("$c");
+  var u= ~b;
+  print("$u");
+  var B=a|b;
+  print("$B");
+  var d=a^b;
+  print("$d");
+  var e=a>>3;
+  print("$e");
+  var f=a<<3; 
+  print("$f");
+}
+Output: 
+
+
+Assignment operator-In assignment operator is used as symbol ”=”.
+Code:
+ void main() {
+  double a= 6;
+  double b= 2;
+  var c=a+=b;
+  print("$c");
+  var u=a-=b;
+  print("$u");
+  var g= a*=b;
+  print("$g");
+  var d=a/=b;
+  print("$d");
+  var e=a%=b;
+  print("$e");
+}
+Output:
+ 
+
+3)Decision making statement-
+Code:
+void main() {
+  var marks=67;
+  if(marks>85)
+  {
+    print("Excellent");
+  }else if(marks>75){
+    print("very good");
+  }else if(marks>65){
+    print("good");
+  }else{
+    print("Average");
+  }
+}
+Output:
+ 
+4)Factorial of program-
+Code:
+void main() {
+  print(factorial(7));
+}
+factorial(number){
+  if(number<=0){
+    return 1;
+  }else{
+    return(number*factorial(number-1));
+  }
+}
+Output:
+ 
+5)Prime code program-
+Code:
+bool isPrime(N){
+  for(var i=2;i<=N/i;++i){
+    if(N % i== 0){
+      return false;
+    }
+  }
+  return true;
+}
+void main() {
+  print("Enter N");
+  int N=23;
+  if(isPrime(N)){
+    print('$N is prime number');
+  }else{
+    print('$N is not prime number');
+  }
+}
+Output:
+ 
+6)Declaring a class
+Code:
+class Student{
+  var StdName;
+  var StdAge;
+  var StdRoll_no;
+
+  showStdInfo(){
+     print("Student Name is :${StdName}");
+     print("Student Name is :${StdAge}");
+     print("Student Name is :${StdRoll_no}");
+  }
+}
+void main(){
+  var std =new Student();
+  std.StdName="Rashmika";
+  std.StdAge=54;
+  std.StdRoll_no=5343;
+  std.showStdInfo();
+  }
+Output: 
+
+
+
+
+
+
+
+
+
+
+PRACTICAL-2
+
+1) Write a Dart program to print the following string in a specific format Sample String : "Twinkle, twinkle, little star, How I wonder what you are! Up above the world so high, Like a diamond in the sky. Twinkle, twinkle, little star, How I wonder what you are" Output:
+	Twinkle, twinkle, little star,
+		How I wonder what you are! 
+			Up above the world so high,   		
+			Like a diamond in the sky. 
+	Twinkle, twinkle, little star, 
+		How I wonder what you are
+
+Code:
+void main() {
+   var value =  '''
+   Twinkle, twinkle, little star,
+      \tHow I wonder what you are!
+           \t\tUp above the world so high,
+           \t\tLike a diamond in the sky.
+   Twinkle, twinkle, little star,
+      \tHow I wonder what you are
+   ''';
+   print(value);
+ }
+Output:
+
+
+
+
+2) Write a Dart program to get the Python version you are using.
+Code –
+import 'dart:io' show Platform;
+main() {
+  print(Platform.version);
+}	
+Output:
+ 
+3) Write a Dart program to display the current date and time. Sample Output : Current date and time : 2014-07-05 14:34:14
+Code-
+void main() {
+  var now = new DateTime.now();
+  print(now);
+}
+Output:   
+ 
+4) Write a Dart program which accepts the radius of a circle from the user and compute the area.
+Code –
+import 'dart:io';
+
+main() {
+  const pi = 3.14;
+  dynamic radius = stdin.readLineSync();
+  radius = double.parse(radius);
+  print('The area is: ${pi*radius*radius}');
+}
+Output:
+ 
+5) Write a Dart program which accepts the user's first and last name and print them in reverse order with a space between them.
+   Code –
+import 'dart:io';
+main() {
+     print('Enter First Name');
+     var firstName = stdin.readLineSync();
+     print('Enter Last Name');
+     var lastName = stdin.readLineSync();
+     print('$lastName $firstName');
+   }
+Output:
+ 
+6) Write a Dart program which accepts a sequence of comma-separated numbers from user and generate a list and a tuple with those numbers. Sample data : 3, 5, 7, 23 Output : List : ['3', ' 5', ' 7', ' 23'] Set : ('3', ' 5', ' 7', ' 23')
+Code –
+import 'dart:io';
+main() {
+  dynamic elements = stdin.readLineSync();
+  var eleList = elements.split(',');
+  print('List: $eleList');
+  var eleSet = <String> {};
+  for (var x in eleList) {
+    eleSet.add(x);
+  }
+  print('Set: $eleSet');
+}
+Output:
+ 
+7)Write a dart program to accept a filename from the user and print the extension of that. Sample filename : abc.java Output : java
+Code -
+import 'dart:io';
+void main() {
+  dynamic fileName = stdin.readLineSync();
+  var fileSplit = fileName.split(',');
+  print(fileSplit[1]); 
+}
+Output:
+ 
+8) Write a Dart program to display the first and last colors from the following list. color_ list = ["Red" ,"Green" ,"White" ,"Black"]
+Code –
+void main() {
+  var color_list = ['Red', 'Green', 'White', 'Black'];
+  print('${color_list.first} and ${color_list.last}');
+}
+Output:
+ 
+
+
+PRACTICAL-3
+
+1) Write a Dart program that accepts an integer (n) and computes the value of n+nn+nnn.
+Code –
+import 'dart:io';
+main() {
+  var sum = 0;
+  dynamic n = stdin.readLineSync();
+  var numberList = [n, n*2, n*3];
+  for (var x in numberList) {
+    sum += int.parse(x);
+  }
+  print(sum);
+}
+Output:
+ 
+2) Write a Dart program to print the calendar of a given month and year.
+Code-
+
+import 'dart:io';
+void main() {
+  var month = stdin.readLineSync();
+  var year = stdin.readLineSync();
+  Process.run('cal', [month, year]).then((ProcessResult 
+  results) {
+    print(results.stdout);
+  });;
+}
+Output:-
+ 
+3)Write a Dart program to print the following here document. Sample string : a string that you "don't" have to escape This is a ....... multi-line heredoc string --------> example
+Code –
+void main() {
+  var output = '''
+  a string that you \"don\'t\" have to escape
+  this
+  is a ....... multi-line
+  heredoc string --------> example
+  ''';
+  print(output);
+}
+Output:
+ 
+4) Write a Dart program to calculate number of days between two dates. Sample dates : (2014, 7, 2), (2014, 7, 11) Expected output : 9 days
+Code –
+void main() {
+  var initialDate = new DateTime.utc(2014, 07, 02);
+  var finalDate = new DateTime.utc(2014, 07, 11);
+  var difference = finalDate.difference(initialDate);
+  print(difference.inDays);
+}
+Output:
+ 
+5) Write a Dart program to get the volume of a sphere with radius 6.
+Code-
+import 'dart:math';
+import 'dart:io';
+void main() {
+  dynamic radius = stdin.readLineSync();
+  radius = double.parse(radius);
+  print(4/3*(pi*pow(radius, 3)));
+}
+Output:
+ 
+6) Write a Dart program to get the difference between a given number and 17, if the number is greater than 17 return double the absolute difference.
+Code –
+import 'dart:io';
+void main(List<String> args) {
+  var number = int.parse(stdin.readLineSync()?? '');
+  int result = number-17;
+  var diff = result.abs();
+  if (number > 17) {
+    print(2*diff);
+  }
+  else {
+    print(result);
+  }
+}
+Output:
+ 
+
+
+Practical-4
+
+Q.1) Write a Dart program to test whether a number is within 100 of 1000 or 2000.
+import 'dart:io';
+void main() {
+  dynamic number = stdin.readLineSync();
+  number=int.parse(number);
+  if ((1000-number).abs() <= 100 || (2000-number).abs() <= 100) {
+    print('True');
+  }
+  else {
+    print('False');
+  }
+}
+Output:-
+ 
+Q.2) Write a Dart program to calculate the sum of three given numbers, if the values are equal then return three times of their sum.
+import 'dart:io';
+void main(List<String> args) {
+  var sum = 0;
+  var numbers = (stdin.readLineSync())?.split(' ');
+  numbers = numbers?.sublist(0, 3);
+  numbers?.forEach((f){
+    int.parse(f);
+    sum += int.parse(f);
+  });
+  if(numbers![0] == numbers[1] && numbers[1] == numbers[2] && numbers[0] == numbers[2]) {
+    print(3*sum);
+  }
+  else {
+    print(sum);
+  }
+}
+Output:-
+ 
+Q.3) Write a Dart program to get a new string from a given string where "Is" has been added to the front. If the given string already begins with "Is" then return the string unchanged.
+import 'dart:io';
+void main(List<String> args) {
+  var value = stdin.readLineSync();
+  if (value?.substring(0,2) == 'Is') {
+    print(value);
+  }
+  else {
+    print('Is$value');
+  }
+}
+Output:-
+
+
+
+
+
+
+Q.4) Write a Dart program to get a string which is n (non-negative integer) copies of a given string.
+import 'dart:io';
+void main(List<String> args) {
+  var value = stdin.readLineSync();
+  dynamic n=stdin.readLineSync();
+  var numbers = int.parse(n);
+  print('${value!*numbers}');
+}
+Output:-
+ 
+Q.5) Write a Dart program to find whether a given number (accept from the user) is even or odd, print out an appropriate message to the user.
+import 'dart:io';
+void main(List<String> args) {
+  dynamic number = int.parse(stdin.readLineSync()!);
+  if (number % 2 == 0) {
+    print('The number is even');
+  }
+  else {
+    print('The number is odd');
+  }
+}
+Output:-
+ 
+Q.6) Write a Dart program to count the number 4 in a given list.
+import 'dart:io';
+void main(List<String> args) {
+  int count = 0;
+  var numberList = (stdin.readLineSync())!.split(' ');
+  numberList.forEach((f) {
+    if (int.parse(f) == 4) {
+      count += 1;
+    }
+  });
+  print(count);
+}
+Output:-
+ 
+
+
+
+
+
+
+Practical-5
+
+Q.1) Write a Dart program to get the n (non-negative integer) copies of the first 2 characters of a given string. Return the n copies of the whole string if the length is less than 2.
+import 'dart:io';
+void main(List<String> args) {
+  var value = stdin.readLineSync();
+  var numbers = int.parse(stdin.readLineSync()!);
+  if (value!.length <= 2){
+    print('${value*numbers}');
+  }
+  else {
+    print('${(value.substring(0, 2))*numbers}');
+  }
+}
+Output:-
+ 
+Q.2) Write a Dart program to test whether a passed letter is a vowel or not.
+import 'dart:io';
+void main(List<String> args) {
+  var vowels = ['a', 'e', 'o', 'u', 'i'];
+  var value = stdin.readLineSync();
+  value = value!.substring(0,1);
+  var found=false;
+  for(var f in vowels){
+    if (f == value) {
+      print('True');
+      found=true;
+      return;
+    }}
+    if(found == false) {
+      print('False');
+      return;
+    }
+  }
+Output:-
+ 
+Q.3) Write a Dart program to check whether a specified value is contained in a group of values.
+import 'dart:io';
+void main(List<String> args) {
+  var valueList = (stdin.readLineSync())!.split(' ');
+  var value = int.parse(stdin.readLineSync()!);
+  valueList.forEach((f){
+    if (int.parse(f) == value) {
+      print('True');
+      exit(0);
+    }
+  });
+  print('False');
+}
+Output:-
+ 
+Q.4) Write a Dart program to create a histogram from a given list of integers.
+import 'dart:io';
+void main(List<String> args) {
+  var numbers = (stdin.readLineSync())!.split(' ');
+  numbers.forEach((f){
+    var pattern = '';
+    for (var x=0; x< int.parse(f); x++) {
+      pattern += '@';
+    }
+    print(pattern);
+  });
+}
+Output:-
+ 
+Q.5) Write a Dart program to concatenate all elements in a list into a string and return it.
+import 'dart:io';
+void main(List<String> args) {
+  var numbers = (stdin.readLineSync())!.split(' ');
+  var result = '';
+  numbers.forEach((f){
+    result += f;
+  });
+  print(result);
+}
+Output:-
+ 
+Q.6) Write a Dart program to print all even numbers from a given numbers list in the same order and stop the printing if any numbers that come after 237 in the sequence.
+import 'dart:io';
+void main(List<String> args) {
+  var numbers = (stdin.readLineSync())!.split(' ');
+  numbers.forEach((f){
+    if (int.parse(f) == 237) {
+        exit(0);
+      }
+    if (int.parse(f) % 2 ==0) {
+      print(f);
+    }
+  });
+}
+Output:-
+ 
+Q.7) Write a Dart program to print out a set containing all the colors from color_list_1 which are not present in color_list_2. Test Data : color_list_1 = set(["White", "Black", "Red"]) color_list_2 = set(["Red", "Green"]) Expected Output : {'Black', 'White'}
+import 'dart:io';
+void main(List<String> args) {
+  var color_1 = <String> {};
+  var color_2 = <String> {};
+  var input1 = (stdin.readLineSync())!.split(' ');
+  input1.forEach((f) {
+    color_1.add(f);
+  });
+  var input2 = (stdin.readLineSync())!.split(' ');
+  input2.forEach((f) {
+    color_2.add(f);
+  });
+
+  var difference = color_1.difference(color_2);
+  print(difference);
+}
+Output:-
+ 
+Q.8) Write a Dart program that will accept the base and height of a triangle and compute the area.
+import 'dart:io';
+void main(List<String> args) {
+  var base = double.parse(stdin.readLineSync()!);
+  var height = double.parse(stdin.readLineSync()!);
+  print(0.5*base*height);
+}
+Output:-
+ 
+Q.9) Write a Dart program to compute the greatest common divisor (GCD) of two positive integers.
+import 'dart:io';
+void main(List<String> args) {
+  var numbers = (stdin.readLineSync())!.split(' ');
+  print(int.parse(numbers[0]).gcd(int.parse(numbers[1])));
+}
+Output:-
+ 
+Q.10) Write a Dart program to get the least common multiple (LCM) of two positive integers.
+import 'dart:io';
+void main(List<String> args) {
+  var numbers = (stdin.readLineSync())!.split(' ');
+  var gcd = int.parse(numbers[0]).gcd(int.parse(numbers[1]));
+  print((int.parse(numbers[0])*int.parse(numbers[1]))~/gcd);
+}
+Output:-
+ 
+Q.11) Write a Dart program to sum of three given integers. However, if two values are equal sum will be zero.
+import 'dart:io';
+void main(List<String> args) {
+  var sum = 0;
+  var numbers = (stdin.readLineSync())!.split(' ');
+  numbers = numbers.sublist(0, 3);
+  numbers.forEach((f){
+    int.parse(f);
+    sum += int.parse(f);
+  });
+  if(numbers[0] == numbers[1] || numbers[1] == numbers[2] || numbers[0] == numbers[2]) {
+    print(0);
+  }
+  else {
+    print(sum);
+  }
+}
+Output:-
+ 
+
+
+Practical-6
+
+Q.1) Create a program that asks the user to enter their name and their age. Print out a message that tells how many years they have to be 100 years old.
+import 'dart:io';
+void main() {
+  stdout.write( "What's your name? ");
+  var name = stdin.readLineSync();
+  print("Hi, $name! What is your age?");
+  int age = int.parse(stdin.readLineSync()!);
+  int yearsToHunderd = 100 - age;
+  print("$name, You have $yearsToHunderd years to be 100");
+}
+Output:-
+ 
+Q.2) Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.
+import 'dart:io';
+void main() {
+  stdout.write("Hi, please choose a number: ");
+  int number = int.parse(stdin.readLineSync()!);
+  if (number % 2 == 0) {
+    print("Chosen number is even");
+  }
+  else {
+    print("Chosen number is odd");
+  }
+}
+Output:-
+ 
+Q.3) Take a list, say for example this one:
+  a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+and write a program that prints out all the elements of the list that are less than 5.
+void main() {
+  List<int> a = [1, 4, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+  print([for (var i in a) if (i < 5) i]);
+}
+Output:-
+ 
+Q.4) Create a program that asks the user for a number and then prints out a list of all the divisors of that number.If you don’t know what a divisor is, it is a number that divides evenly into another number. For example, 13 is a divisor of 26 because 26 / 13 has no remainder.
+import 'dart:io';
+void main() {
+  stdout.write("Please choose a number: ");
+  int number = int.parse(stdin.readLineSync()!);
+  for (var i = 1; i <= number; i++) {
+    if (number % i == 0) {
+      print(i);
+    }
+  }
+}
+OutPut:-
+ 
+Q.5) Take two lists, for example:
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+  b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+and write a program that returns a list that contains only the elements that are common between them (without duplicates). Make sure your program works on two lists of different sizes.
+void main() {
+  List<int> a = [1, 1, 2, 3, 6,5, 8, 11, 21, 34, 55, 89];
+  List<int> b= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 89];
+  Set<int> c = {};
+  for (var i in a) {
+    for (var j in b) {
+      if (i == j) {
+        c.add(i);
+      }
+    }
+  }
+  print(c.toList());
+  print(Set.from(a). intersection (Set.from(b)).toList());
+}
+Output:-
+
+
+
+
+
+
